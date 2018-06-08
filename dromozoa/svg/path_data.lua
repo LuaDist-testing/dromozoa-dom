@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -65,18 +65,18 @@ local function make_command(command, n)
     return function (self, ...)
       local segment = make_segment(command, n, ...)
       if segment[2] < 0 then
-        error("bad argument #2 (rx must be non-negative)")
+        error "bad argument #2 (rx must be non-negative)"
       end
       if segment[3] < 0 then
-        error("bad argument #3 (ry must be non-negative)")
+        error "bad argument #3 (ry must be non-negative)"
       end
       local flag = segment[5]
       if flag ~= 0 and flag ~= 1 then
-        error("bad argument #5 (large_arc_flag must be 0 or 1)")
+        error "bad argument #5 (large_arc_flag must be 0 or 1)"
       end
       local flag = segment[6]
       if flag ~= 0 and flag ~= 1 then
-        error("bad argument #6 (sweep_flag must be 0 or 1)")
+        error "bad argument #6 (sweep_flag must be 0 or 1)"
       end
       self[#self + 1] = segment
       return self

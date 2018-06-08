@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -17,9 +17,13 @@
 
 local check_name = require "dromozoa.dom.check_name"
 
+local verbose = os.getenv "VERBOSE" == "1"
+
 local function check(name, expect)
   local result = { pcall(check_name, name) }
-  print(result[1], result[2])
+  if verbose then
+    print(result[1], result[2])
+  end
   assert(result[1] == expect)
 end
 

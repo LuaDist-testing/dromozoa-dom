@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -26,7 +26,7 @@ local function check(f, expect_filename)
   end
 
   for line in io.lines(expect_filename) do
-    local first, last = assert(line:match("^(%d+)\t(%d+)$"))
+    local first, last = assert(line:match "^(%d+)\t(%d+)$")
     first = tonumber(first)
     last = tonumber(last)
     for i = first, last do

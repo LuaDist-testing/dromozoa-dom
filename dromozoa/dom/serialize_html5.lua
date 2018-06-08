@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -81,7 +81,7 @@ local function serialize_html5(out, u)
       end
     end
   end
-  out:write(">")
+  out:write ">"
 
   if not void_elements[name] then
     for i = 1, m do

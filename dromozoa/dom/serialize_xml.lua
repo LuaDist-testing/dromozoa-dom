@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -63,9 +63,9 @@ local function serialize_xml(out, u)
   end
 
   if m == 0 then
-    out:write("/>")
+    out:write "/>"
   else
-    out:write(">")
+    out:write ">"
     for i = 1, m do
       local v = u[i]
       local t = type(v)

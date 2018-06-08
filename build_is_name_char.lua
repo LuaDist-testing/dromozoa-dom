@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -51,22 +51,22 @@ local function process(source, code_filename, test_filename)
   local _ = builder(false)
 
   local out = assert(io.open(test_filename, "w"))
-  for line in source:gmatch("[^\n]+") do
+  for line in source:gmatch "[^\n]+" do
     local a = line:match("^\"(.)\"$")
     local first, last
     if a then
       first = string.byte(a)
     else
-      local a = line:match("^#x(%x+)$")
+      local a = line:match "^#x(%x+)$"
       if a then
         first = tonumber(a, 16)
       else
-        local a, b = line:match("^%[(.)%-(.)%]")
+        local a, b = line:match "^%[(.)%-(.)%]"
         if a then
           first = string.byte(a)
           last = string.byte(b)
         else
-          local a, b = assert(line:match("^%[#x(%x+)%-#x(%x+)%]$"))
+          local a, b = assert(line:match "^%[#x(%x+)%-#x(%x+)%]$")
           first = tonumber(a, 16)
           last = tonumber(b, 16)
         end

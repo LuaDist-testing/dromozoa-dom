@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -19,22 +19,13 @@ local element = require "dromozoa.dom.element"
 local xml_document = require "dromozoa.dom.xml_document"
 
 local _ = element
-local doc = xml_document(_"svg" {
-  version = "1.1";
-  width = 600;
-  height = 600;
-  xmlns = "http://www.w3.org/2000/svg";
-  _"circle" {
-    cx = 300;
-    cy = 300;
-    r = 100;
-  };
-})
--- doc.doctype = {
---   name = "svg";
---   public_id = "-//W3C//DTD SVG 1.1//EN";
---   system_id = "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd";
--- }
+local doc = xml_document(_"greeting" { "Hello, world!" })
+doc.doctype = {
+  name = "greeting";
+  system_id = "hello.dtd";
+}
 
-doc:serialize(io.stdout)
-io.write("\n")
+local out = assert(io.open("test.xml", "w"))
+doc:serialize(out)
+out:write "\n"
+out:close()

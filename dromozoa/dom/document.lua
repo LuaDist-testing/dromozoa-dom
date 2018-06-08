@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -28,11 +28,11 @@ function class:serialize_doctype(out)
     end
     if system_id then
       if not public_id then
-        out:write(" SYSTEM")
+        out:write " SYSTEM"
       end
       out:write(" \"", system_id, "\"")
     end
-    out:write(">")
+    out:write ">"
   end
 end
 

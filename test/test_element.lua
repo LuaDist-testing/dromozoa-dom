@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -19,6 +19,8 @@ local element = require "dromozoa.dom.element"
 local serialize_html5 = require "dromozoa.dom.serialize_html5"
 local serialize_xml = require "dromozoa.dom.serialize_xml"
 
+local verbose = os.getenv "VERBOSE" == "1"
+
 local _ = element
 
 local root = _"html" {
@@ -38,12 +40,21 @@ local root = _"html" {
 }
 
 local div = root[2][1]
+assert(div[0] == "div")
 div[#div + 1] = _"span" { "qux" }
 
-assert(not pcall(function () div["invalid name"] = 42 end))
+local result, message = pcall(function () div["invalid name"] = 42 end)
+if verbose then
+  print(message)
+end
+assert(not result)
 
-serialize_html5(io.stdout, root)
-io.write("\n")
+local out = assert(io.open("test.html", "w"))
+serialize_html5(out, root)
+out:write "\n"
+out:close()
 
-serialize_xml(io.stdout, root)
-io.write("\n")
+local out = assert(io.open("test.xml", "w"))
+serialize_xml(out, root)
+out:write "\n"
+out:close()
