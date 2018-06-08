@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>実装メモ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<style>
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid;
+}
+</style>
+<body>
+
+<h1>実装メモ</h1>
+
+<h2>リンク</h2>
+
+<ul>
+  <li>Extensible Markup Language (XML) 1.0 (Fifth Edition)
+    <ul>
+      <li><a href="https://www.w3.org/TR/xml/#d0e804">Names and Tokens</a></li>
+    </ul>
+  </li>
+  <li>Extensible Markup Language (XML) 1.1 (Second Edition)
+    <ul>
+      <li><a href="https://www.w3.org/TR/2006/REC-xml11-20060816/#IDAKUDS">Names and Tokens</a></li>
+    </ul>
+  </li>
+  <li>MicroXML
+    <ul>
+      <li><a href="https://dvcs.w3.org/hg/microxml/raw-file/tip/spec/microxml.html#names">Names</a></li>
+    </ul>
+  </li>
+  <li>HTML5
+    <ul>
+      <li><a href="https://www.w3.org/TR/html5/infrastructure.html#boolean-attribute">boolean attributes</a></li>
+      <li><a href="https://www.w3.org/TR/html5/syntax.html#escaping-a-string">Escape a string</a></li>
+      <li><a href="https://www.w3.org/TR/html5/syntax.html#void-elements">Void elements</a></li>
+    </ul>
+  </li>
+  <li>HTML5.1
+    <ul>
+      <li><a href="https://www.w3.org/TR/html51/infrastructure.html#boolean-attribute">boolean attributes</a></li>
+      <li><a href="https://www.w3.org/TR/html51/syntax.html#escaping-a-string">Escape a string</a></li>
+      <li><a href="https://www.w3.org/TR/html51/syntax.html#void-elements">Void elements</a></li>
+    </ul>
+  </li>
+  <li>HTML5.2
+    <ul>
+      <li><a href="https://www.w3.org/TR/html52/infrastructure.html#boolean-attribute">boolean attributes</a></li>
+      <li><a href="https://www.w3.org/TR/html52/syntax.html#escaping-a-string">Escape a string</a></li>
+      <li><a href="https://www.w3.org/TR/html52/syntax.html#void-elements">Void elements</a></li>
+    </ul>
+  </li>
+  <li>DOM Parsing
+    <ul>
+      <li><a href="https://www.w3.org/TR/DOM-Parsing/#dfn-concept-serialize-attr-value">serialize an attribute value</a></li>
+    </ul>
+  </li>
+  <li>SVG
+    <ul>
+      <li><a href="https://www.w3.org/TR/SVG11/">Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a></li>
+      <li><a href="https://www.w3.org/TR/SVG12/">Scalable Vector Graphics (SVG) Full 1.2 Specification</a></li>
+      <li><a href="https://www.w3.org/TR/SVG2/">Scalable Vector Graphics (SVG) 2</a></li>
+    </ul>
+</ul>
+
+<h2>Names and Tokens</h2>
+
+<div>
+XML 1.0とXML 1.1のNameStartChar, NameCharは等しい。
+MicroXMLのnameStartChar, nameCharは名前空間を取りのぞくために":"を持たない。
+このほかに、nonCharacterCodePointの除外によっていくつかのコードポイントを除外している。
+</div>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  CommonHTML: {
+    undefinedFamily: "sans-serif"
+  }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script>
+</body>
+</html>
