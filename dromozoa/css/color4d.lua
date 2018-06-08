@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -20,6 +20,20 @@ local metatable = {
   __index = class;
   ["dromozoa.dom.is_serializable"] = true;
 }
+
+function class:normalize()
+  return self
+end
+
+function class:interpolate(that, alpha)
+  that = that:normalize()
+  local beta = 1 - alpha
+  return class(
+      beta * self[1] + alpha * that[1],
+      beta * self[2] + alpha * that[2],
+      beta * self[3] + alpha * that[3],
+      beta * self[4] + alpha * that[4])
+end
 
 function metatable:__tostring()
   local r = self[1] * 255

@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -27,3 +27,5 @@ assert(tostring(color4d(1, 0.5, 0.25)) == "rgb(100%,50%,25%)")
 assert(tostring(color4d(1, 0.5, 0.25, 0.75)) == "rgba(100%,50%,25%,0.75)")
 assert(tostring(colors.blue) == "#00F")
 assert(tostring(colors.silver) == "#C0C0C0")
+assert(tostring(colors.transparent) == "rgba(0,0,0,0)")
+assert(tostring(color4d(1, 0, 0, 0.5):interpolate(colors.lime, 0.5)) == "rgba(50%,50%,0%,0.75)")

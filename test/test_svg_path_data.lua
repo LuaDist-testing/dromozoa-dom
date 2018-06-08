@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -17,6 +17,7 @@
 
 local element = require "dromozoa.dom.element"
 local xml_document = require "dromozoa.dom.xml_document"
+local color4b = require "dromozoa.css.color4b"
 local path_data = require "dromozoa.svg.path_data"
 
 local _ = element
@@ -71,17 +72,17 @@ local doc = xml_document(_"svg" {
     d = path_data():M(600, 300):L(600, 400):L(700, 400):T(700, 300):L(600, 300);
     fill = "none";
     stroke = "#333";
-    ["stroke-dasharray"] = "2";
+    ["stroke-dasharray"] = 2;
   };
   _"path" {
     d = path_data():M(100, 400):L(200, 400):A(100, 100, 0, 0, 0, 100, 300);
     fill = "none";
-    stroke = "#333";
+    stroke = color4b(0x33, 0x33, 0x33);
   };
   _"path" {
     d = path_data():M(250, 400):L(350, 400);
     fill = "none";
-    stroke = "#c00";
+    stroke = color4b(0xCC, 0, 0);
   };
 })
 doc:serialize(io.stdout)

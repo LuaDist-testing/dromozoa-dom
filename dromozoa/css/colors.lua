@@ -1,4 +1,4 @@
--- Copyright (C) 2017 Tomoyuki Fujimori <moyu@dromozoa.com>
+-- Copyright (C) 2017,2018 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-dom.
 --
@@ -34,4 +34,5 @@ return {
   blue = color4b(0, 0, 255);
   teal = color4b(0, 128, 128);
   aqua = color4b(0, 255, 255);
+  transparent = color4b(0, 0, 0, 0);
 }
