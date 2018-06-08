@@ -1,22 +1,25 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "dromozoa-dom"
-version = "1.0-1"
+version = "1.1-1"
 -- LuaDist source
 source = {
-  tag = "1.0-1",
+  tag = "1.1-1",
   url = "git://github.com/LuaDist-testing/dromozoa-dom.git"
 }
 -- Original source
 -- source = {
---   url = "https://github.com/dromozoa/dromozoa-dom/archive/v1.0.tar.gz";
---   file = "dromozoa-dom-1.0.tar.gz";
+--   url = "https://github.com/dromozoa/dromozoa-dom/archive/v1.1.tar.gz";
+--   file = "dromozoa-dom-1.1.tar.gz";
 -- }
 description = {
   summary = "DOM DSL and serialization";
   license = "GPL-3";
   homepage = "https://github.com/dromozoa/dromozoa-dom/";
   maintainer = "Tomoyuki Fujimori <moyu@dromozoa.com>";
+}
+dependencies = {
+  "dromozoa-utf8";
 }
 build = {
   type = "builtin";
