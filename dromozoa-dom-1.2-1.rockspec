@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "dromozoa-dom"
-version = "1.1-1"
+version = "1.2-1"
 -- LuaDist source
 source = {
-  tag = "1.1-1",
+  tag = "1.2-1",
   url = "git://github.com/LuaDist-testing/dromozoa-dom.git"
 }
 -- Original source
 -- source = {
---   url = "https://github.com/dromozoa/dromozoa-dom/archive/v1.1.tar.gz";
---   file = "dromozoa-dom-1.1.tar.gz";
+--   url = "https://github.com/dromozoa/dromozoa-dom/archive/v1.2.tar.gz";
+--   file = "dromozoa-dom-1.2.tar.gz";
 -- }
 description = {
   summary = "DOM DSL and serialization";

@@ -53,6 +53,11 @@ local function serialize_xml(out, u)
         out:write(" ", k, "=\"", ("%.17g"):format(v), "\"")
       elseif t == "string" then
         out:write(" ", k, "=\"", (v:gsub("[&\"<>]", escape_table)), "\"")
+      elseif t == "table" then
+        local metatable = getmetatable(v)
+        if metatable and metatable["dromozoa.dom.is_serializable"] then
+          out:write(" ", k, "=\"", (tostring(v):gsub("[&\"<>]", escape_table)), "\"")
+        end
       end
     end
   end
