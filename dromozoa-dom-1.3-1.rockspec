@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "dromozoa-dom"
-version = "1.2-1"
+version = "1.3-1"
 -- LuaDist source
 source = {
-  tag = "1.2-1",
+  tag = "1.3-1",
   url = "git://github.com/LuaDist-testing/dromozoa-dom.git"
 }
 -- Original source
 -- source = {
---   url = "https://github.com/dromozoa/dromozoa-dom/archive/v1.2.tar.gz";
---   file = "dromozoa-dom-1.2.tar.gz";
+--   url = "https://github.com/dromozoa/dromozoa-dom/archive/v1.3.tar.gz";
+--   file = "dromozoa-dom-1.3.tar.gz";
 -- }
 description = {
   summary = "DOM DSL and serialization";
@@ -24,14 +24,21 @@ dependencies = {
 build = {
   type = "builtin";
   modules = {
+    ["dromozoa.css.color4b"] = "dromozoa/css/color4b.lua";
+    ["dromozoa.css.color4d"] = "dromozoa/css/color4d.lua";
+    ["dromozoa.css.colors"] = "dromozoa/css/colors.lua";
     ["dromozoa.dom.check_name"] = "dromozoa/dom/check_name.lua";
+    ["dromozoa.dom.comma_separated"] = "dromozoa/dom/comma_separated.lua";
     ["dromozoa.dom.document"] = "dromozoa/dom/document.lua";
     ["dromozoa.dom.element"] = "dromozoa/dom/element.lua";
     ["dromozoa.dom.html5_document"] = "dromozoa/dom/html5_document.lua";
     ["dromozoa.dom.is_name_char"] = "dromozoa/dom/is_name_char.lua";
     ["dromozoa.dom.is_name_start_char"] = "dromozoa/dom/is_name_start_char.lua";
     ["dromozoa.dom.serialize_html5"] = "dromozoa/dom/serialize_html5.lua";
+    ["dromozoa.dom.serialize_separated"] = "dromozoa/dom/serialize_separated.lua";
     ["dromozoa.dom.serialize_xml"] = "dromozoa/dom/serialize_xml.lua";
+    ["dromozoa.dom.space_separated"] = "dromozoa/dom/space_separated.lua";
     ["dromozoa.dom.xml_document"] = "dromozoa/dom/xml_document.lua";
+    ["dromozoa.svg.path_data"] = "dromozoa/svg/path_data.lua";
   };
 }
